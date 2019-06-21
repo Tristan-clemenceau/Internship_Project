@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./Assets/CSS/index.css">
+	<title>Musée du louvre</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+  <!-- [NAV BAR] -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="HomeUser"><img src="./Assets/Images/logo.png" width="75" height="75"><span id="font_special_logo">Louvre</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="HomeUser"><i class="fas fa-home"></i>Accueil</a>
+          </li>
+         <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-shopping-basket"></i>Boutique</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Ticket</a>
+              <a class="dropdown-item" href="#">Goodies</a>
+            </div>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link" href="Boutique"><i class="fas fa-shopping-basket"></i>Boutique</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-map-marked-alt"></i>Informations</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Horraires</a>
+              <a class="dropdown-item" href="#">Plan</a>
+              <a class="dropdown-item" href="#">Contact</a>
+            </div>
+          </li>-->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i><span id="lbl_username">Username</span></a>
+            <div id="account_option" class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="AccountPage">Mon compte</a>
+              <a class="dropdown-item" href="Logout">Se déconnecter</a>
+              <!--<a class="dropdown-item" href="#">Historique</a>-->
+            </div>
+          </li>
+         <!--  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-info-circle"></i>À propos</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Dons</a>
+              <a class="dropdown-item" href="#">Newsletter</a>
+            </div>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i>Langues</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Français</a>
+              <a class="dropdown-item" href="#">Anglais</a>
+              <a class="dropdown-item" href="#">Chinese</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- [SLIDER] -->
+  <div class="container-fluid">
+    <div class="row padding text-center">
+      <div class="col-lg-8 col-md-12">
+        <div id="slider" class="carousel slide " data-ride="carousel">
+          <ul class="carousel-indicators">
+            <li data-target="#slider" data-slide-to="0" class="active"></li>
+            <li data-target="#slider" data-slide-to="1"></li>
+          </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./Assets/Images/Caroussel_02.jpg">
+            <div class="carousel-caption">
+              <h1 class="display-1 text-left">Titre</h1>
+              <h2 class="display-3 text-left">Sous tritre</h2>
+              <p class="text-left">@source</p>
+            </div>
+          </div>
+        <div class="carousel-item">
+         <img src="./Assets/Images/Caroussel_05.jpg">
+          <div class="carousel-caption">
+              <h1 class="display-1 text-left">Titre</h1>
+              <h2 class="display-3 text-left">Sous tritre</h2>
+              <p class="text-left">@source</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <h2>Informations</h2>
+        <div class="row ">
+          <div id="divToast" class="col-12">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [CONTENT] -->
+  <div class="container-fluid p-5">
+    <div class="row jumbotron">
+      <div class="col-12">
+        <p class="Lead text-center display-1">Informations Utiles</p>
+      </div>
+    </div>
+  </div>
+  <div id="divColor" class="py-5">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-6 shadow-sm">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/SzMWjDbgN7Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-6 shadow-sm">
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/NFbbZfxELAU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container-fluid p-5">
+    <div class="row jumbotron">
+      <div class="col-12">
+        <p class="Lead text-center display-1">Galerie photo</p>
+      </div>
+    </div>
+  </div>
+  <div id="divColor" class="py-5">
+    <div class="container-fluid">
+      <div id="divImg"class="row">
+      </div>
+    </div>
+  </div>
+  <!-- [FOOTER] -->
+  <footer class="bg-light sticky-bottom">
+    <div class="container-fluid padding">
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+      <div class="col-md-2 mb-3">
+        <h6>
+          <a href="HomeUser" class="text-secondary fontSpecial"><i class="fas fa-home"></i>Accueil</a>
+        </h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6>
+          <a href="Boutique" class="text-secondary fontSpecial"><i class="fas fa-shopping-basket"></i>Boutique</a>
+        </h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6>
+          <div class="dropup">
+            <a href="#" type="button" class="text-secondary dropdown-toggle fontSpecial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i><span id="footer_lbl_username">Username</span></a>
+              <div class="dropdown-menu">
+                <!-- Dropdown menu links -->
+                <a class="dropdown-item" href="AccountPage">Mon compte</a>
+              <a class="dropdown-item" href="Logout">Se déconnecter</a>
+              </div>
+          </div>
+        </h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6>
+          <div class="dropup">
+            <a href="#" type="button" class="text-secondary dropdown-toggle fontSpecial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i>Langues</a>
+              <div class="dropdown-menu">
+                <!-- Dropdown menu links -->
+                <a href="#" class="dropdown-item">Français</a>
+                <a href="#" class="dropdown-item">Anglais</a>
+                <a href="#" class="dropdown-item">Chinois</a>
+              </div>
+          </div>
+        </h6>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12">
+        <hr id="hr_footer">
+        <ul class="list-inline list-unstyled">
+          <li class="list-inline-item"><a href="http://twitter.com/museelouvre" class="text-secondary"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.facebook.com/museedulouvre" class="text-secondary"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.instagram.com/museelouvre/" class="text-secondary"><i class="fab fa-instagram fa-2x"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.youtube.com/user/louvre" class="text-secondary"><i class="fab fa-youtube-square fa-2x"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </footer>
+  <!-- [SCRIPT] -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+	  /*SET DEFAULT*/
+	  $lbl_username = $("#lbl_username");
+	  $lbl_footer_username = $("#footer_lbl_username");
+	  $div_img = $("#divImg");
+	  $div_toaster =$("#divToast");
+	  $mdf_account_link = $("#account_option");
+	  
+      $('.toast').toast('show');
+      setImage();
+      setToast();
+      isAdmin();
+	  setDefaultEnv();
+	  function setDefaultEnv(){
+      	$.getJSON('UtilisateurJson', {
+      		"service" : "1"
+        	  })
+        	    .done(function(data) {
+        	    //loading animation set visisibility to hidden
+        	      console.log("Statut : "+data.statut);
+        	      console.log("Msg : "+data.msg);
+        	      console.log("date_User : "+data.date_User);
+        	      console.log("username_User : "+data.username_User);
+        	      $lbl_username.html(data.username_User);
+        	      $lbl_footer_username.html(data.username_User);
+        	});
+      }
+	  function setImage(){
+	        $.getJSON('https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?', {
+	                tags: "Louvre",
+	                tagmode: "any",
+	                format: "json"
+	              })
+	                .done(function(data) {
+	                   $.each( data.items, function( i, item ){
+	                      creationCard(item.media.m);
+	                      if(i === 11){
+	                        return false;
+	                      }
+	                   });
+	            });
+	      }
+
+	      function creationCard(src){
+	        $divGlobal = $("<div>").attr("class","col-md-4");
+	        $divsub = $("<div>").attr("class","card mb-6 shadow-sm");
+
+	        $divGlobal.appendTo($div_img);
+	        $divsub.appendTo($divGlobal);
+
+	        $( "<img>" ).attr( {
+	              "src": src,
+	              "class": "card-img-top"
+	          } ).appendTo($divsub);
+	      }
+	      function creationToast(title,date,content){
+	        	/*DECLARATION*/
+	            $divPrincipal =  $("<div>").attr({
+	                "role": "alert",
+	                "class": "toast",
+	                "aria-live" : "assertive",
+	                "aria-atomic" : "true",
+	                "data-autohide" : "false"
+	            } );
+	            $divToastHeader =  $("<div>").attr("class","toast-header");
+	            
+	            $strongToast = $("<strong>").attr("class","mr-auto");
+	            $strongToast.html(title);
+	            
+	            $smallToast = $("<small>").html(date);
+	            
+	            $btnToast = $("<button>").attr({
+	                "type": "button",
+	                "class": "ml-2 mb-1 close",
+	                "data-dismiss" : "toast",
+	                "aria-label" : "Close"
+	            } );
+	            
+	            $spanToast = $("<span>").attr("aria-hidden","true");
+	            $spanToast.html("&times;");
+	            
+	            $divToastBody = $("<div>").attr("class","toast-body");
+	            $divToastBody.html(content);
+	            
+	            /*APPEND*/
+	            $spanToast.appendTo($btnToast);
+	            
+	            $strongToast.appendTo($divToastHeader);
+	            $smallToast.appendTo($divToastHeader);
+	            $btnToast.appendTo($divToastHeader);
+	            
+	            $divToastHeader.appendTo($divPrincipal);
+	            $divToastBody.appendTo($divPrincipal);
+	            
+	            $divPrincipal.appendTo($div_toaster);
+	            
+	            $divPrincipal.toast('show');
+	          }
+	        
+	        function setToast(){
+	            $.getJSON('AlertJson')
+	                    .done(function(data) {
+	                       $.each( data.rows, function( i, item ){
+	                    	   creationToast(item.Alert_title,item.Alert_date,item.Alert_content);
+	                       });
+	                });
+	          }
+	        function isAdmin(){//7
+	       	 $.getJSON('UtilisateurJson', {
+	         		"service" : "7"
+	           	  })
+	           	    .done(function(data) {
+	           	      console.log(data.id_User);
+	           	      if(data.id_User == 4){
+	           	    	  adminAccess();
+	           	      }
+	           	      if(data.statut != "SUCCESS"){
+	           	    	console.log(data.msg);  
+	           	      }
+	           	});
+	        }
+	        
+	        function adminAccess(){
+	        console.log("admin")
+	       	$baliseAdmin = $("<a>").attr({"href":"AdminPage","class":"dropdown-item"});
+	       	$baliseAdmin.html("Admin");
+	       	
+	       	$baliseAdmin.appendTo($mdf_account_link);
+	        }
+  });
+  </script>
+</body>
+</html>

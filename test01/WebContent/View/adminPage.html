@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Musée du louvre</title>
+  <meta charset="utf-8" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
+    <script type="text/ecmascript" src="./Assets/JS/jquery-ui.min.js"></script>
+    
+    <!-- We support more than 40 localizations -->
+    <script type="text/ecmascript" src="./Assets/JS/grid.locale-en.js"></script>
+    <!-- This is the Javascript file of jqGrid -->   
+    <script type="text/ecmascript" src="./Assets/JS/jquery.jqGrid.js"></script>
+    <!-- This is the localization file of the grid controlling messages, labels, etc.-->
+    <!-- A link to a jQuery UI ThemeRoller theme, more than 22 built-in and many more custom -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!---   
+    <link rel="stylesheet" href="../../../css/iconic/font/css/open-iconic-bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
+ --->
+    <!-- The link to the CSS that the grid needs -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./Assets/CSS/ui.jqgrid-bootstrap4.css" />
+    <link rel="stylesheet" type="text/css" href="./Assets/CSS/index.css">
+    <script>
+        $.jgrid.defaults.width = 780;
+        $.jgrid.defaults.responsive = true;
+        $.jgrid.defaults.styleUI = 'Bootstrap4';
+        $.jgrid.defaults.iconSet = "Octicons";
+    </script>
+    <!--
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="./Assets/JS/admin_script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+  <!-- [NAV BAR] -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="HomeUser"><img src="./Assets/Images/logo.png" width="75" height="75"><span id="font_special_logo">Louvre</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="HomeUser"><i class="fas fa-home"></i>Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Boutique"><i class="fas fa-shopping-basket"></i>Boutique</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i><span id="lbl_username">Username</span></a>
+            <div id="account_option" class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="AccountPage">Mon compte</a>
+              <a class="dropdown-item" href="Logout">Se déconnecter</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i>Langues</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Français</a>
+              <a class="dropdown-item" href="#">Anglais</a>
+              <a class="dropdown-item" href="#">Chinois</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- [JUMBOTRON] -->
+  <div class="container-fluid">
+      <div class="row ">
+       <div class="col-12">
+          <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#card_Alert" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-center text-primary">Alert</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="card_Alert" style="">
+                  <div class="card-body">
+                    <div class="form-group text-center">
+                      <label for="alertTitle" class="h2">Titre</label>
+                      <input type="text" class="form-control text-center" name="alertTitle" id="alertTitle" aria-describedby="emailHelp" placeholder="Entrer un titre">
+                      <label for="registerInputUsername" class="h2">Message</label>
+                      <textarea class="form-control text-center" id="exampleFormControlTextarea1" rows="3" placeholder="Entrer votre message ici"></textarea>
+                    </div>
+                    <div class="text-right">
+                      <a href="#" id="btn_annuler"><button type="button" class="btn btn-outline-secondary btn-lg">Annuler</button></a>
+                      <a href="#" id="btn_ajouter"><button type="button" class="btn btn-outline-secondary btn-lg">Ajouter</button></a>
+                    </div>
+                    <!-- ALERT PART -->
+                    <div id="alert_Alert" class="alert alert-info fade show" role="alert">
+            			<p id="alert_Alert_message">Tous les champs doivent êtres remplis</p>
+         			</div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="row"><!--INFO BASIC-->
+        <div class="col-12">
+          <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#card_Data" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-center text-primary">Données</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="card_Data" style="">
+                  <div class="card-body">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-xl-3 col-md-6 mb-4"><!--PREMIERE CARTE-->
+                          <div class="card border-danger shadow h-100 py-2">
+                              <div class="card-body">
+                               <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                   <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Alertes</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                                  </div>
+                                  <div class="col-auto">
+                                    <i class="fas fa-exclamation-circle fa-2x text-danger"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-left border-success shadow h-100 py-2">
+                              <div class="card-body">
+                               <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                   <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Utilisateurs</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">40</div>
+                                  </div>
+                                  <div class="col-auto">
+                                    <i class="fas fa-user fa-2x text-success"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-info shadow h-100 py-2">
+                              <div class="card-body">
+                               <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                   <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tickets</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">40</div>
+                                  </div>
+                                  <div class="col-auto">
+                                    <i class="fas fa-ticket-alt fa-2x text-info"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card border-primary shadow h-100 py-2">
+                              <div class="card-body">
+                               <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                   <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Revenu</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">1222€</div>
+                                  </div>
+                                  <div class="col-auto">
+                                    <i class="fas fa-dollar-sign fa-2x text-primary"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="row"><!--DIAGRAME-->
+        <div class="col-12">
+          <div class="card shadow mb-4">
+                <!-- Card Header - Accordion -->
+                <a href="#card_Diag" class="d-block card-header py-3 collapsed" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseCardExample">
+                  <h6 class="m-0 font-weight-bold text-center text-primary">Diagrammes</h6>
+                </a>
+                <!-- Card Content - Collapse -->
+                <div class="collapse" id="card_Diag" style="">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-12">
+                        <canvas id="myChart"></canvas>
+                      </div>
+                      <div class="col-lg-6 col-md-12">
+                        <canvas id="myChart2"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+      <div class="row"><!-- CREATION ALERT -->
+        <div class="col-12">
+          <div class="card text-center mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-center text-primary">JQGrid</h6>
+                    </div>
+                    <div class="card-body">
+                        <!--JQGRID -->
+                        <div class="row">
+                          <div class="col-12">
+                            <table id="jqGrid"></table>
+                            <div id="jqGridPager"></div>
+                            <span class="oi oi-person"  ></span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <table id="jqGrid2"></table>
+                            <div id="jqGridPager2"></div>
+                            <span class="oi oi-person"  ></span>
+                          </div>
+                        </div>                    
+                    </div>
+                </div>
+        </div>
+      </div>
+  </div>
+  <!-- [FOOTER] -->
+  <footer class="bg-light sticky-bottom">
+    <div class="container-fluid padding">
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+      <div class="col-md-2 mb-3">
+        <h6>
+          <a href="HomeUser" class="text-secondary fontSpecial"><i class="fas fa-home"></i>Accueil</a>
+        </h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6>
+          <a href="Boutique" class="text-secondary fontSpecial"><i class="fas fa-shopping-basket"></i>Boutique</a>
+        </h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6>
+          <div class="dropup">
+            <a href="#" type="button" class="text-secondary dropdown-toggle fontSpecial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i><span id="footer_lbl_username">Username</span></a>
+              <div class="dropdown-menu">
+                <!-- Dropdown menu links -->
+                <a href="AccountPage" class="dropdown-item">Mon compte</a>
+                <a href="Logout" class="dropdown-item">Se déconnecter</a>
+              </div>
+          </div>
+        </h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6>
+          <div class="dropup">
+            <a href="#" type="button" class="text-secondary dropdown-toggle fontSpecial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i>Langues</a>
+              <div class="dropdown-menu">
+                <!-- Dropdown menu links -->
+                <a href="#" class="dropdown-item">Français</a>
+                <a href="#" class="dropdown-item">Anglais</a>
+                <a href="#" class="dropdown-item">Chinois</a>
+              </div>
+          </div>
+        </h6>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12">
+        <hr id="hr_footer">
+        <ul class="list-inline list-unstyled">
+          <li class="list-inline-item"><a href="http://twitter.com/museelouvre" class="text-secondary"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.facebook.com/museedulouvre" class="text-secondary"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.instagram.com/museelouvre/" class="text-secondary"><i class="fab fa-instagram fa-2x"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.youtube.com/user/louvre" class="text-secondary"><i class="fab fa-youtube-square fa-2x"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </footer>
+  </body>
+</html>
